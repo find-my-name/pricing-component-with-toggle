@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(240, 78%, 98%);
+  background-image: url("/images/bg-top.svg");
+  background-position: top 0 right 0;
+  background-repeat: no-repeat;
+}
+
+body > h1 {
+  color: hsl(233, 13%, 49%);
+  margin-bottom: 1.2em;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  color: hsl(234, 14%, 74%);
+  margin-bottom: 4em;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Styling for the switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer; /* Add cursor style to indicate interactivity */
+}
+
+/* Styling for the switch track */
+.switch .track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 17px;
+  transition: background-color 0.1s;
+}
+
+.switch .track:hover {
+  opacity: 0.5;
+}
+
+/* Styling for the switch thumb/knob */
+.switch .thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.switch .switch-on {
+  left: auto;
+  right: 4px;
+  transition: all 0.3s;
+}
+
+.cards {
+  display: flex;
+  text-align: center;
+  color: hsl(233, 13%, 49%);
+  align-items: center;
+  z-index: 1000;
+}
+
+.cards .card {
+  background-color: #fff;
+  padding: 2em;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25vw;
+}
+
+.cards .card h1 {
+  font-size: 5vw;
+  margin: 20px 0;
+  color: hsl(232, 13%, 33%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cards .card h1 span {
+  font-size: 2.5rem;
+}
+
+.cards .card:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card.card-blue {
+  background: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  height: 590px;
+  border-radius: 10px;
+  color: hsl(240, 78%, 98%);
+}
+
+.card.card-blue h1 {
+  color: #fff;
+}
+
+.cards .card:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card hr {
+  border: none;
+  height: 1px;
+  background-color: hsl(234, 14%, 90%);
+  margin: 20px 0;
+}
+
+.card-blue hr {
+  background-color: hsl(240, 78%, 80%);
+}
+
+.btn {
+  margin-top: 1em;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  padding: 1em 0;
+  border-radius: 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background: none;
+  border: 1px solid hsl(236, 72%, 79%);
+  color: hsl(237, 63%, 64%);
+}
+
+.btn.btn-white {
+  background: none;
+  background-color: #fff;
+  color: hsl(237, 63%, 64%);
+}
+
+.btn.btn-white:hover {
+  background: none;
+  border: 1px solid hsl(240, 78%, 98%);
+  color: #fff;
+}
+
+/* Change switch appearance when checked */
+input[type="checkbox"]:checked + .switch .track {
+  background-color: #4caf50;
+}
+
+input[type="checkbox"]:checked + .switch .thumb {
+  transform: translateX(26px);
+}
+
+.bottom-image {
+  position: absolute;
+  background-image: url("/images/bg-bottom.svg");
+  bottom: 0;
+  left: 0;
+}
+
+@media (max-width: 1100px) {
+  body {
+    display: block;
+    padding-top: 3em;
+  }
+
+  body > h1 {
+    color: hsl(233, 13%, 49%);
+    text-align: center;
+  }
+
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    color: hsl(234, 14%, 74%);
+    justify-content: center;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 2em;
+    padding-bottom: 3em;
+  }
+
+  .cards .card {
+    background-color: #fff;
+    padding: 2em;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  .cards .card h1 {
+    font-size: 4.5em;
+  }
+
+  .card-blue {
+    height: auto;
+  }
+
+  .bottom-image {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .cards .card {
+    width: 90%;
+  }
+
+  .cards .card h1 {
+    font-size: 4em;
+  }
+}
